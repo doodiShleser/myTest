@@ -1,0 +1,10 @@
+c:\users\doodi\documents\visual studio 2015\Projects\BE\BE\bin\Debug\BE.dll
+c:\users\doodi\documents\visual studio 2015\Projects\BE\BE\bin\Debug\BE.pdb
+c:\users\doodi\documents\visual studio 2015\Projects\BE\BE\obj\Debug\BE.dll
+c:\users\doodi\documents\visual studio 2015\Projects\BE\BE\obj\Debug\BE.pdb
+C:\Users\doodi\Documents\Visual Studio 2015\Projects\BE\BE\obj\Debug\BE.csprojResolveAssemblyReference.cache
+C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BE\bin\Debug\BE.dll
+C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BE\bin\Debug\BE.pdb
+C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BE\obj\Debug\BE.csprojResolveAssemblyReference.cache
+C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BE\obj\Debug\BE.dll
+C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BE\obj\Debug\BE.pdb
