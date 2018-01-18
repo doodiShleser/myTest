@@ -167,3 +167,6 @@ C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\PLWPF\obj\Debug\PLW
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\PLWPF\obj\Debug\PLWPF.csproj.GenerateResource.Cache
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\PLWPF\obj\Debug\MotherDetailes.g.cs
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\PLWPF\obj\Debug\MotherDetailes.baml
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\PLWPF\bin\Debug\PLWPF.exe.config
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\PLWPF\obj\Debug\PLWPF.exe
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\PLWPF\obj\Debug\PLWPF.pdb
