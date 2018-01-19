@@ -106,9 +106,11 @@ namespace PLWPF
                     Nanny n = BL_imp.GetInstance().getNanny().Find(x => x.name.FirstName == first && x.name.LastName == last);
                     result = MessageBox.Show(
                         "Do you want to continue as this Nanny?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    Mother nul = new Mother();//for function below
+                    MotherOptions nothing = new MotherOptions();
                     if (result == MessageBoxResult.No)
                     {
-                        Detailes.Children.Add(new NannyDetailes().AddNannyDetailesGrid(n));
+                        Detailes.Children.Add(new NannyDetailes().AddNannyDetailesGrid(n,nul,nothing));
                         gridList.Visibility = Visibility.Collapsed;
                         Detailes.Visibility = Visibility.Visible;
                     }

@@ -15,9 +15,8 @@
                 <RowDefinition Height="6*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" x:Name="goBack" Content="BacK" Click="goBack_Click" Margin="10,10,920,70" />
-
-            <Grid Grid.Row="1">
+                <Button Grid.Row="0" x:Name="goBack" Content="BacK" Click="goBack_Click" Margin="10,10,920,70" />
+                <Grid Grid.Row="1">
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -57,8 +56,11 @@
                         <CheckBox  Content="get Five Most Appropriate" x:Name="get_Five_Most_Appropriate" Checked ="Checked"  Unchecked="Unchecked"/>
                     </StackPanel>
                 </Grid>
-
-                <Grid Grid.Column="1">
+                    <StackPanel Grid.Column="2" >
+                        <Button Content="dis" Click="Button_Click" Height="60" Width="50"/>
+                        <TextBlock  x:Name="dist" Width="50" Height="49"/>
+                    </StackPanel>
+                    <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="10*"/>

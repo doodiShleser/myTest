@@ -12,3 +12,10 @@ C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\DAL\bin\Debug\BE.pd
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\DAL\obj\Debug\DAL.dll
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\DAL\obj\Debug\DAL.pdb
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\DAL\bin\Debug\DAL.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\DAL\bin\Debug\DAL.pdb
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\DAL\bin\Debug\BE.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\DAL\bin\Debug\BE.pdb
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\DAL\obj\Debug\DAL.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\DAL\obj\Debug\DAL.pdb

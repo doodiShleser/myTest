@@ -326,25 +326,27 @@ namespace BL
             yourNanny.Recommendations = r;
             addNanny(yourNanny);
         }
-  
 
 
 
+        int Count = 0;
 
         public int CalculateDistance(string source, string dest)
         {
+            
             var drivingDirectionRequest = new DirectionsRequest
             {
                 TravelMode = TravelMode.Walking,
                 Origin = source,
                 Destination = dest,
             };
-            // Console.WriteLine(source);
             DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
+            Count++;
             return leg.Distance.Value;
+            
         }
 
         //private int getDistance(Nanny d, Mother s)
@@ -417,5 +419,9 @@ namespace BL
         //    Leg leg = route.Legs.First();
         //    e.Result = leg.Distance.Value;
         //}
+
+
+
     }
+
 }

@@ -309,20 +309,6 @@
     <Stars>0</Stars>
   </child>
   <child>
-    <id>431777768</id>
-    <idMother>396561164</idMother>
-    <birthday>
-      <year>2017</year>
-      <month>11</month>
-      <day>9</day>
-    </birthday>
-    <FirstName>avreimi</FirstName>
-    <Special>false</Special>
-    <SpecialNeeds></SpecialNeeds>
-    <RecomendationsNanny></RecomendationsNanny>
-    <Stars>0</Stars>
-  </child>
-  <child>
     <id>496453263</id>
     <idMother>339930864</idMother>
     <birthday>
@@ -379,20 +365,6 @@
     <Stars>5</Stars>
   </child>
   <child>
-    <id>414639253</id>
-    <idMother>364699784</idMother>
-    <birthday>
-      <year>2017</year>
-      <month>6</month>
-      <day>2</day>
-    </birthday>
-    <FirstName>yanki</FirstName>
-    <Special>false</Special>
-    <SpecialNeeds></SpecialNeeds>
-    <RecomendationsNanny></RecomendationsNanny>
-    <Stars>2</Stars>
-  </child>
-  <child>
     <id>402753452</id>
     <idMother>352057930</idMother>
     <birthday>
@@ -419,5 +391,33 @@
     <SpecialNeeds></SpecialNeeds>
     <RecomendationsNanny></RecomendationsNanny>
     <Stars>5</Stars>
+  </child>
+  <child>
+    <id>414639253</id>
+    <idMother>364699784</idMother>
+    <birthday>
+      <year>2017</year>
+      <month>6</month>
+      <day>2</day>
+    </birthday>
+    <FirstName>yanki</FirstName>
+    <Special>false</Special>
+    <SpecialNeeds></SpecialNeeds>
+    <RecomendationsNanny></RecomendationsNanny>
+    <Stars>0</Stars>
+  </child>
+  <child>
+    <id>431777768</id>
+    <idMother>396561164</idMother>
+    <birthday>
+      <year>2017</year>
+      <month>11</month>
+      <day>9</day>
+    </birthday>
+    <FirstName>avreimi</FirstName>
+    <Special>false</Special>
+    <SpecialNeeds></SpecialNeeds>
+    <RecomendationsNanny></RecomendationsNanny>
+    <Stars>3</Stars>
   </child>
 </childs>

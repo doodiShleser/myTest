@@ -2,8 +2,10 @@
 using BL;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -49,7 +51,7 @@ namespace PLWPF
             Window more = new MoreNannyDetailes(forMore);
             more.Show();
         }
-        public NannyDetailes AddNannyDetailesGrid(Nanny n)
+        public NannyDetailes AddNannyDetailesGrid(Nanny n, Mother m, MotherOptions mo)
         {
             double rat;
             if (n.peopleThatRating != 0)
@@ -58,7 +60,11 @@ namespace PLWPF
             var myGrid = new NannyDetailes();
             myGrid.ID.Content = n.ID;
             myGrid.Nanny_Name.Content = String.Format(n.name.FirstName + " " + n.name.LastName);
-            myGrid.Nanny_Address.Content = n.address +"; Floor " +n.floor.ToString();
+            string d = "";
+            if (m.address != null)
+                d = ((double)n.distance / 1000).ToString();
+            myGrid.Nanny_Address.Content = n.address + "; Floor " + n.floor.ToString();
+            myGrid.distanse.Content = " ," + d + " KM from your location";
             myGrid.Nanny_Detailes.Text += n.print();
             myGrid.Price.Text += String.Format("Price Per Months: " + n.SallaryPerMonth);
             myGrid.Number_Recommendations.Content = String.Format(n.numberRecommendations + " Recommendations");
@@ -69,6 +75,5 @@ namespace PLWPF
                 myGrid.rating.Children.Add(new Star(0,0));
             return myGrid;
         }
-
     }
 }

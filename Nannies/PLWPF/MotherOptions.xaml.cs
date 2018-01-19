@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using BE;
 using BL;
 using System.ComponentModel;
+using System.Threading;
 
 namespace PLWPF
 {
@@ -29,24 +30,10 @@ namespace PLWPF
         List<Nanny> Selected;
         NannyDetailes Element_of_Nanny_Detailes;
         Button lastClicked; //the last sortButton that clicked
-
+        Dictionary<Nanny, int> distMtoN;
         public MotherOptions()
         {
             InitializeComponent();
-            instance = BL_imp.GetInstance();//singelton
-            r = new Random();
-            tofunctions = instance.getMother()[r.Next(0, 20)];
-            idM = tofunctions.ID;
-            Selected = instance.getNanny();
-
-            Element_of_Nanny_Detailes = new NannyDetailes();
-            foreach (Nanny item in Selected)
-                Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item));
-
-            Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
-            lastClicked = new Button();
-
-            detailes.Content = String.Format(tofunctions.name.FirstName + " " + tofunctions.name.LastName);
         }
         public MotherOptions(int id)
         {
@@ -56,10 +43,22 @@ namespace PLWPF
             tofunctions = instance.getMother().Find(x=>x.ID == id);
             idM = tofunctions.ID;
             Selected = instance.getNanny();
-
+            Thread t;
+            ///<object contains nanny with her distance to mother/>
+            foreach (Nanny n in Selected)
+            {
+                //Thread.Sleep(200);
+                n.distance = 345;
+                t = new Thread(() => n.distance = (instance.CalculateDistance(n.address, tofunctions.address)));
+                t.Start();
+                t.Join();
+            } 
+            distMtoN = new Dictionary<Nanny, int>();
+            foreach (Nanny n in Selected)
+                distMtoN.Add(n, n.distance);
             Element_of_Nanny_Detailes = new NannyDetailes();
-            foreach (Nanny item in Selected) 
-                Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item));
+            foreach (Nanny item in Selected)
+                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item, tofunctions,this));
 
             Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
             lastClicked = new Button();
@@ -96,6 +95,8 @@ namespace PLWPF
                     break;
             }
         }
+       
+
         private void suitableSort()
         {
             var toList = Grid_Detailes.Children.OfType<NannyDetailes>();
@@ -106,7 +107,7 @@ namespace PLWPF
                 List<KeyValuePair<Nanny, int>> t = BLSorting.GetInstance().sortBySuitableDays(Selected, tofunctions);//why?
                 Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
                 for (int i = 0; i < t.Count; i++)
-                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(t[i].Key));        
+                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(t[i].Key,tofunctions,this));        
             }
             else
                 Number_of_nannies.Text += String.Format("Sorry, but there no Nannies suit for you");
@@ -122,7 +123,7 @@ namespace PLWPF
                 Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
 
                 foreach (Nanny item in Selected)
-                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item));
+                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item,tofunctions,this));
             }
             else
                 Number_of_nannies.Text += String.Format("Sorry, but there no Nannies suit for you");
@@ -136,9 +137,9 @@ namespace PLWPF
             if (Selected.Count != 0)
             {
                 Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
-                List<KeyValuePair<Nanny, int>> t = BLSorting.GetInstance().sortByDistance(Selected, tofunctions);
+                List<KeyValuePair<Nanny, int>> t = BLSorting.GetInstance().sortByDistance(distMtoN, tofunctions);
                 for (int i = 0; i < t.Count; i++)
-                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(t[i].Key));
+                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(t[i].Key,tofunctions,this));
             }
             else
                 Number_of_nannies.Text += String.Format("Sorry, but there no Nannies suit for you");
@@ -154,7 +155,7 @@ namespace PLWPF
                 Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
                 Selected = BLSorting.GetInstance().sortByRating(Selected);
                 foreach (Nanny item in Selected)
-                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item));
+                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item,tofunctions,this));
             }
             else
                 Number_of_nannies.Text += String.Format("Sorry, but there no Nannies suit for you");
@@ -378,7 +379,7 @@ namespace PLWPF
             {
                 Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
                 foreach (Nanny item in Selected)
-                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item));
+                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item,tofunctions,this));
             }
             else
                 Number_of_nannies.Text += String.Format("Sorry, but there no Nannies suit for you");
@@ -400,10 +401,22 @@ namespace PLWPF
             {
                 Number_of_nannies.Text += String.Format("We Find " + Selected.Count + " Nannies suit for you");
                 foreach (Nanny item in Selected)
-                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item));
+                    Grid_Detailes.Children.Add(Element_of_Nanny_Detailes.AddNannyDetailesGrid(item,tofunctions,this));
             }
             else
                 Number_of_nannies.Text += String.Format("Sorry, but there no Nannies suit for you");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Thread t;
+            
+            int s = 0;
+            Nanny a = instance.getNanny()[r.Next(0, 19)];
+            t = new Thread(() =>s = instance.CalculateDistance( tofunctions.address,a.address));
+            t.Start();
+            t.Join();
+            dist.Text = s.ToString(); 
         }
     }
 }

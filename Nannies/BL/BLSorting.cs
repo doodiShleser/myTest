@@ -45,17 +45,9 @@ namespace BL
             price.Sort(delegate (Nanny nan1, Nanny nan2) { return nan1.SallaryPerMonth.CompareTo(nan2.SallaryPerMonth); });
             return price;
         }
-        public List<KeyValuePair<Nanny, int>> sortByDistance(List<Nanny> n, Mother m)
+        public List<KeyValuePair<Nanny, int>> sortByDistance(Dictionary<Nanny,int> dict, Mother m)
         {
-            List<Nanny> temp = instance.getNanny();
-            List<Nanny> best = new List<Nanny>();
-            Dictionary<Nanny, int> myDict = new Dictionary<Nanny, int>();
-            foreach (Nanny item in temp)
-                new Thread(() =>
-                myDict.Add(item, BL_imp.GetInstance().CalculateDistance(item.address, m.address))
-                ).Start();
-
-            List<KeyValuePair<Nanny, int>> myList = myDict.ToList();
+            List<KeyValuePair<Nanny, int>> myList = dict.ToList();
             myList.Sort(delegate (KeyValuePair<Nanny, int> pair1, KeyValuePair<Nanny, int> pair2)
             { return pair1.Value.CompareTo(pair2.Value); });
             return myList;

@@ -18,3 +18,13 @@ C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BL\bin\Debug\DAL.pd
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BL\obj\Debug\BL.dll
 C:\Users\doodi\Documents\Visual Studio 2015\Projects\Nannies\BL\obj\Debug\BL.pdb
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\bin\Debug\BL.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\bin\Debug\BL.pdb
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\bin\Debug\BE.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\bin\Debug\DAL.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\bin\Debug\GoogleMapsApi.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\bin\Debug\BE.pdb
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\bin\Debug\DAL.pdb
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\obj\Debug\BL.dll
+C:\Users\doodi\Documents\GitHub\myTest\Nannies\BL\obj\Debug\BL.pdb

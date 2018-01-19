@@ -10,6 +10,7 @@ namespace BE
     public class Nanny
     {
         public Nanny() { myChildren = new List<Child>(); }
+        public int distance;//for keep the distanse from certain mother
         public int ID { get; set; }
         public Name name { get; set; }
         public DateTime birthday { get; set; }
